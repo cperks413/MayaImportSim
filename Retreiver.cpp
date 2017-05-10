@@ -36,6 +36,9 @@ void Retreiver::create(const char* name)
 	MFnDagNode fnpSphereShape;
 	MObject objpSphereShape = fnpSphereShape.create("mesh", objpSphereTrans);
 
+	MPlug rPlug = fnpSphere.findPlug("radius");
+	rPlug.setValue(0.25);
+
 	MDGModifier dgMod;
 	MPlug srcPlug = fnpSphere.findPlug("output");
 	MPlug destPlug = fnpSphereShape.findPlug("inMesh");
